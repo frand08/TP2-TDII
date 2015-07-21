@@ -4,16 +4,32 @@
 #include "board.h"
 
 
+void setup_SysTick_INT(void)
+{
+	//Interrupcion cada SystemCoreClock/10 ticks
+	SysTick_Config(SystemCoreClock/10);
+}
+
+
+void SysTick_Handler(void)
+{
+	Board_LED_Toggle(0);
+}
+
+
 int main (void)
 {
-	int i=0;
+	//Inicializacion de Board y SystemCoreClock
+	SystemCoreClockUpdate();
 	Board_Init();
+	//Inicializacion del SysTick
+	setup_SysTick_INT();
+
 	while(1)
 	{
-		for (i=0; i<1000000; i++);
-
-		Board_LED_Toggle(0);
-
+		//Lo unico que hacemos es esperar a la interrupcion de
+		//SysTick en el main
+		__WFI();
 	}
 
 	return 0;

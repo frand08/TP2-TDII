@@ -1,6 +1,20 @@
 /**
- * \file
  * \mainpage
+ * \section intro_sec Introduccion
+ *
+ * TP2 de Tecnicas Digitales 2
+ *
+ * \section Descripcion
+ *
+ * Programa sencillo que hace destellar el LED del stick LPCXpresso\n
+ * usando delay por hardware (SysTick + IRQ).
+ *
+ * Todo el desarrollo del mismo se realizo en el main.c
+ */
+
+
+/**
+ * \file
  * \brief Funcion principal
  *
  */

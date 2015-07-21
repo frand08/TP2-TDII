@@ -2,6 +2,6 @@
 TP1 de Digitales 2
 
 Integrantes: 
-Francisco Dominguez
-Juan Gabriel Sivinian
+Francisco Dominguez\n
+Juan Gabriel Sivinian\n
 Alan Vaudagna

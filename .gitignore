@@ -33,3 +33,6 @@
 
 #Debug Launch File
 *.launch
+
+#Generated Debug Files Folder
+app/out

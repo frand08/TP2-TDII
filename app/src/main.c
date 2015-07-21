@@ -1,29 +1,47 @@
-
-
+/**
+ * \file
+ * \mainpage
+ * \brief Funcion principal
+ *
+ */
 #include "main.h"
 #include "board.h"
 
-
-void setup_SysTick_INT(void)
+/**
+ * \brief Funcion de configuracion de la interrupcion por SysTick
+ *
+ *	Se utiliza a SysTick_Config para setear cada cuantos Ticks se
+ *	generara la interrupion
+ */
+void Setup_SysTick(void)
 {
 	//Interrupcion cada SystemCoreClock/10 ticks
-	SysTick_Config(SystemCoreClock/10);
+	SysTick_Config(SystemCoreClock/CLOCK_DIVIDER);
 }
 
-
-void SysTick_Handler(void)
+/**
+ * \brief ISR de la interrupcion por SysTick
+ *
+ *	Solo se hace un Toggle del Board_LED(0)
+ */
+void SysTick_Handler(s)
 {
 	Board_LED_Toggle(0);
 }
 
-
+/**
+ * \brief Funcion main principal
+ *
+ *	Se realizan las inicializaciones de SystemCoreClock, Board y del SysTick.\n
+ *	Luego entra en loop que es solo interrumpido por la interrupcion de timer.
+ */
 int main (void)
 {
 	//Inicializacion de Board y SystemCoreClock
 	SystemCoreClockUpdate();
 	Board_Init();
 	//Inicializacion del SysTick
-	setup_SysTick_INT();
+	Setup_SysTick();
 
 	while(1)
 	{

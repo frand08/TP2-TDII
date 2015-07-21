@@ -1,5 +1,5 @@
-# TP1-TDII
-TP1 de Digitales 2
+# TP2-TDII
+TP2 de Digitales 2
 
 Integrantes: 
 Francisco Dominguez
